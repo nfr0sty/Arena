@@ -25,7 +25,7 @@ public class Paladin : Fighter
     {
         return new Paladin(Name, MaxHealth, Damage, Armor);
     }
-
+    
     public override void TakeDamage(int damage)
     {
         int healthBefore = Health;

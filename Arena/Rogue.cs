@@ -12,6 +12,7 @@ public class Rogue : Fighter
     {
         if (dodgeChancePercent < MinDodgeChancePercent)
             dodgeChancePercent = MinDodgeChancePercent;
+        
         if (dodgeChancePercent > MaxDodgeChancePercent)
             dodgeChancePercent = MaxDodgeChancePercent;
 

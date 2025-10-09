@@ -18,7 +18,7 @@ public class Mage : Fighter
         _maxMana = maxMana;
         _mana = _maxMana;
     }
-
+    
     public override void ShowStats()
     {
         base.ShowStats();
@@ -33,7 +33,9 @@ public class Mage : Fighter
         {
             _mana -= _maxMana;
             int fireballDamage = Damage * FireballDamageMultiplier;
+            
             Console.WriteLine($"{Name} кастует «Огненный шар»! Урон: {Damage} → {fireballDamage}. Мана: {_mana}/{_maxMana}");
+            
             return fireballDamage;
         }
         

@@ -16,6 +16,7 @@ public class Hunter : Fighter
     public override void ShowStats()
     {
         base.ShowStats();
+        
         Console.WriteLine($"Каждая {DoubleStrikePeriod}-я атака наносит {DoubleStrikeHits} удара подряд");
     }
 

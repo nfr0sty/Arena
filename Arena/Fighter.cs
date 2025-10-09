@@ -56,8 +56,6 @@ public abstract class Fighter
         target.TakeDamage(dealtDamage);
     }
     
-    
-
     public virtual void TakeDamage(int damage)
     {
         if (damage < MinDamageValue)
@@ -108,6 +106,7 @@ public abstract class Fighter
         }
         
         int missingHealth = MaxHealth - Health;
+        
         int healAmount = amount;
         
         if (healAmount > missingHealth)

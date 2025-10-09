@@ -59,12 +59,14 @@ public class BattleGround
         if (firstFighter.IsAlive == true && secondFighter.IsAlive == false)
         {
             Console.WriteLine($"Победил {firstFighter.Name}!");
+            
             return;
         }
 
         if (firstFighter.IsAlive == false && secondFighter.IsAlive == true)
         {
             Console.WriteLine($"Победил {secondFighter.Name}!");
+            
             return;
         }
         
