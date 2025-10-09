@@ -1,0 +1,15 @@
+/Users/nick/RiderProjects/Arena/Arena/bin/Debug/net7.0/Arena
+/Users/nick/RiderProjects/Arena/Arena/bin/Debug/net7.0/Arena.deps.json
+/Users/nick/RiderProjects/Arena/Arena/bin/Debug/net7.0/Arena.runtimeconfig.json
+/Users/nick/RiderProjects/Arena/Arena/bin/Debug/net7.0/Arena.dll
+/Users/nick/RiderProjects/Arena/Arena/bin/Debug/net7.0/Arena.pdb
+/Users/nick/RiderProjects/Arena/Arena/obj/Debug/net7.0/Arena.csproj.AssemblyReference.cache
+/Users/nick/RiderProjects/Arena/Arena/obj/Debug/net7.0/Arena.GeneratedMSBuildEditorConfig.editorconfig
+/Users/nick/RiderProjects/Arena/Arena/obj/Debug/net7.0/Arena.AssemblyInfoInputs.cache
+/Users/nick/RiderProjects/Arena/Arena/obj/Debug/net7.0/Arena.AssemblyInfo.cs
+/Users/nick/RiderProjects/Arena/Arena/obj/Debug/net7.0/Arena.csproj.CoreCompileInputs.cache
+/Users/nick/RiderProjects/Arena/Arena/obj/Debug/net7.0/Arena.dll
+/Users/nick/RiderProjects/Arena/Arena/obj/Debug/net7.0/refint/Arena.dll
+/Users/nick/RiderProjects/Arena/Arena/obj/Debug/net7.0/Arena.pdb
+/Users/nick/RiderProjects/Arena/Arena/obj/Debug/net7.0/Arena.genruntimeconfig.cache
+/Users/nick/RiderProjects/Arena/Arena/obj/Debug/net7.0/ref/Arena.dll
