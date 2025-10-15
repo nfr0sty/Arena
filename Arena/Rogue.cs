@@ -34,7 +34,7 @@ public class Rogue : Fighter
     {
         bool isDodge = UserUtils.TryGetRandomChance(_dodgeChancePercent);
 
-        if (isDodge == true)
+        if (isDodge)
         {
             Console.WriteLine($"{Name} УКЛОНЯЕТСЯ от удара! Урон не получен.");
             return;

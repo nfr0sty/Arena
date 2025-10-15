@@ -7,14 +7,14 @@ class Program
     
     static void Main(string[] args)
     {
-        CreateFighters factory =  new CreateFighters();
+        FightersFactory factory =  new FightersFactory();
         List<Fighter> fighterPrototypes = factory.CreateAll();
         BattleGround battleGround = new BattleGround();
         ArenaMainMenu mainMenu = new ArenaMainMenu(fighterPrototypes);
 
         bool isWork = true;
 
-        while (isWork == true)
+        while (isWork)
         {
             mainMenu.Show();
             string command = mainMenu.ReadCommand();

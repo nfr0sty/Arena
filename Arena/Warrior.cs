@@ -35,7 +35,7 @@ public class Warrior : Fighter
     {
         bool isCrit = UserUtils.TryGetRandomChance(_critChancePercent);
 
-        if (isCrit == true)
+        if (isCrit)
         {
             int critDamage = Damage * CritMultiplier;
             Console.WriteLine($"{Name} проводит КРИТ-удар! Урон: {Damage}");

@@ -31,7 +31,7 @@ public class Hunter : Fighter
         
         bool isDoubleStrike = (_attackCounter % DoubleStrikePeriod) == 0;
 
-        if (isDoubleStrike == true)
+        if (isDoubleStrike)
         {
             Console.WriteLine($"{Name} проводит ДВОЙНУЮ атаку!");
             

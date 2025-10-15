@@ -31,15 +31,22 @@ public class ArenaMainMenu
 
      public string ReadCommand()
      {
-          while (true)
-          {
-               string input = ConsoleDialog.ReadNonEmptyString("Выш выбор: ");
+          string input;
+          bool isValid;
 
-               if (input == CommandShowBattle ||  input == CommandExit)
-                    return input;
-               
-               Console.WriteLine($"Неверный выбор. Введите {CommandShowBattle} или {CommandExit}.\n");
-          }
+          do
+          {
+               input = ConsoleDialog.ReadNonEmptyString("Ваш выбор: ");
+               isValid = input == CommandShowBattle || input == CommandExit;
+
+               if (isValid == false)
+               {
+                    Console.WriteLine($"Неверный выбор. Введите {CommandShowBattle} или {CommandExit}.\n");
+               }
+
+          } while (isValid == false);
+
+          return input;
      }
 
      public void ShowFighters()

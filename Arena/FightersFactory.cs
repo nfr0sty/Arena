@@ -1,6 +1,6 @@
 namespace Arena;
 
-public class CreateFighters
+public class FightersFactory
 {
     public List<Fighter> CreateAll()
     {

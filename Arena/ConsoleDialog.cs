@@ -12,7 +12,7 @@ public static class ConsoleDialog
             Console.Write(prompt);
             string? input = Console.ReadLine();
 
-            if (string.IsNullOrWhiteSpace(input) == true)
+            if (string.IsNullOrWhiteSpace(input))
             {
                 Console.WriteLine("Ошибка: Пустой ввод. Введите целое число.\n");
                 continue;   
@@ -74,39 +74,21 @@ public static class ConsoleDialog
 
     public static bool ReadYesNo(string prompt)
     {
-        bool isWork = true;
-        bool result = false;
+        string[] yes = { "y", "yes", "д", "да", "ага", "lf" };
+        string[] no  = { "n", "no", "н", "нет", "неа", "ytn" };
 
-        while (isWork)
+        while (true)
         {
-            Console.Write($"{prompt} (y/n): ");
-            string? input = Console.ReadLine();
+            string input = ReadNonEmptyString(prompt).Trim();
 
-            if (string.IsNullOrWhiteSpace(input) == true)
-            {
-                Console.WriteLine("Ошибка: пустой ввод. Введите 'y' или 'n'. (Допустимые ответы — 'y'/'n', 'yes'/'no' или 'д'/'н', да'/'нет'.) \n");
-                continue;
-            }
-            
-            string normalizedInput = input.Trim().ToLowerInvariant();
+            if (yes.Contains(input, StringComparer.OrdinalIgnoreCase))
+                return true;
 
-            if (normalizedInput == "yes" || normalizedInput == "y" || normalizedInput == "да" || normalizedInput == "д")
-            {
-                result = true;
-                isWork = false;
-            }
-            else if (normalizedInput == "no" || normalizedInput == "n" || normalizedInput == "нет" || normalizedInput == "н")
-            {
-                result = false;
-                isWork = false;
-            }
-            else
-            {
-                Console.WriteLine("Ошибка: Допустимые ответы — 'y'/'n', 'yes'/'no' или 'д'/'н', да'/'нет'.\n");
-            }
+            if (no.Contains(input, StringComparer.OrdinalIgnoreCase))
+                return false;
+
+            Console.WriteLine("Ожидался ответ 'y/yes/д/да' или 'n/no/н/нет'. Попробуйте ещё раз.\n");
         }
-        
-        return result;
     }
     
     public static string ReadNonEmptyString(string prompt)
@@ -119,7 +101,7 @@ public static class ConsoleDialog
             Console.Write(prompt);
             string? input = Console.ReadLine();
 
-            if (string.IsNullOrWhiteSpace(input) == true)
+            if (string.IsNullOrWhiteSpace(input))
             {
                 Console.WriteLine("Ошибка: пустой ввод. Повторите.\n");
                 continue;

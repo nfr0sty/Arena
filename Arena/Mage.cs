@@ -29,7 +29,7 @@ public class Mage : Fighter
     {
         bool canCast = _mana >= _maxMana;
 
-        if (canCast == true)
+        if (canCast)
         {
             _mana -= _maxMana;
             int fireballDamage = Damage * FireballDamageMultiplier;
