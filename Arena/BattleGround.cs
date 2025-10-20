@@ -12,27 +12,36 @@ public class BattleGround
         {
             return;
         }
-        
+
         Console.WriteLine($"Начало боя: {firstFighter.Name} vs {secondFighter.Name}");
         firstFighter.ShowStats();
         secondFighter.ShowStats();
         Console.WriteLine();
-        
-        bool isFirstTurn;
 
+        bool isFirstTurn = GetIsFirstTurn(firstFighter, secondFighter);
+
+        StartBattle(firstFighter, secondFighter, isFirstTurn);
+
+        ShowWinner(firstFighter, secondFighter);
+    }
+
+    private bool GetIsFirstTurn(Fighter firstFighter, Fighter secondFighter)
+    {
         int roll = UserUtils.GenerateRandomNumber(InitiativeChoicesCount);
-
         if (roll == FirstChoiceIndex)
         {
             Console.WriteLine($"{firstFighter.Name} атакует первым.");
-            isFirstTurn = true;
+            return true;
         }
         else
         {
             Console.WriteLine($"{secondFighter.Name} атакует первым.");
-            isFirstTurn = false;
+            return false;
         }
+    }
 
+    private void StartBattle(Fighter firstFighter, Fighter secondFighter, bool isFirstTurn)
+    {
         while (firstFighter.IsAlive == true && secondFighter.IsAlive == true)
         {
             if (isFirstTurn == true)
@@ -43,33 +52,34 @@ public class BattleGround
             {
                 secondFighter.Attack(firstFighter);
             }
-            
+
             firstFighter.ShowCurrentHealth();
             secondFighter.ShowCurrentHealth();
             Console.WriteLine();
-            
+
             System.Threading.Thread.Sleep(TurnDelayMs);
-            
+
             if (firstFighter.IsAlive == false || secondFighter.IsAlive == false)
+            {
                 break;
+            }
 
             isFirstTurn = isFirstTurn == false;
         }
+    }
 
+    private void ShowWinner(Fighter firstFighter, Fighter secondFighter)
+    {
         if (firstFighter.IsAlive == true && secondFighter.IsAlive == false)
         {
             Console.WriteLine($"Победил {firstFighter.Name}!");
-            
             return;
         }
-
         if (firstFighter.IsAlive == false && secondFighter.IsAlive == true)
         {
             Console.WriteLine($"Победил {secondFighter.Name}!");
-            
             return;
         }
-        
         Console.WriteLine("Оба бойца пали одновременно. Ничья.");
     }
 }

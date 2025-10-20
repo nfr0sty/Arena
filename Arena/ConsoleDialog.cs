@@ -76,8 +76,10 @@ public static class ConsoleDialog
     {
         string[] yes = { "y", "yes", "д", "да", "ага", "lf" };
         string[] no  = { "n", "no", "н", "нет", "неа", "ytn" };
+        
+        bool isWork = true;
 
-        while (true)
+        while (isWork)
         {
             string input = ReadNonEmptyString(prompt).Trim();
 
@@ -89,6 +91,8 @@ public static class ConsoleDialog
 
             Console.WriteLine("Ожидался ответ 'y/yes/д/да' или 'n/no/н/нет'. Попробуйте ещё раз.\n");
         }
+
+        return false;
     }
     
     public static string ReadNonEmptyString(string prompt)

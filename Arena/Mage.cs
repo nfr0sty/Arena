@@ -27,7 +27,7 @@ public class Mage : Fighter
 
     protected override int CalculateDamage()
     {
-        bool canCast = _mana >= _maxMana;
+        bool canCast = _mana >= FireballManaCost;
 
         if (canCast)
         {
