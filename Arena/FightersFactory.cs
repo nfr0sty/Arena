@@ -52,7 +52,7 @@ public class FightersFactory
     {
         const string Name = "Джайна";
         const int Health = 270;
-        const int Damage = 18;
+        const int Damage = 20;
         const int Armor  = 7;
         const int MaxMana = 70;
 

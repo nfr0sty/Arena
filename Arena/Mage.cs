@@ -31,7 +31,7 @@ public class Mage : Fighter
 
         if (canCast)
         {
-            _mana -= _maxMana;
+            _mana -= FireballManaCost;
             int fireballDamage = Damage * FireballDamageMultiplier;
             
             Console.WriteLine($"{Name} кастует «Огненный шар»! Урон: {Damage} → {fireballDamage}. Мана: {_mana}/{_maxMana}");
